@@ -1,0 +1,47 @@
+#/***************************************************************************
+# *   Copyright (C) 2014 Daniel Mueller (deso@posteo.net)                   *
+# *                                                                         *
+# *   This program is free software: you can redistribute it and/or modify  *
+# *   it under the terms of the GNU General Public License as published by  *
+# *   the Free Software Foundation, either version 3 of the License, or     *
+# *   (at your option) any later version.                                   *
+# *                                                                         *
+# *   This program is distributed in the hope that it will be useful,       *
+# *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+# *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+# *   GNU General Public License for more details.                          *
+# *                                                                         *
+# *   You should have received a copy of the GNU General Public License     *
+# *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
+# ***************************************************************************/
+
+default_color ffffff
+draw_outline no
+use_xft yes
+xftfont DejaVu Sans Mono:size=24
+
+disable_auto_reload yes
+double_buffer       yes
+
+own_window       yes
+own_window_transparent yes
+own_window_type  desktop
+own_window_hints below,skip_pager,skip_taskbar,undecorated,sticky
+
+update_interval 60
+out_to_console  no
+out_to_stderr   no
+
+# This value must be chosen very carefully, it depends on the font width
+# and determines the bounding box of the text and indirectly the
+# position; the problem when not specifying this is that the color
+# substitution below incorrectly influences the width--although there is
+# not more text visible, the widgets gets wider
+maximum_width 400
+
+alignment middle_right
+gap_x 50
+gap_y 50
+
+TEXT
+${execpi 300 cal --monday | sed --regexp-extended --expression="s!( |^)($(date +%e))( |$)!\1\$\{color e84448\}\2\$\{color\}\3!"}
