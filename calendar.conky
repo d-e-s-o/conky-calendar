@@ -23,7 +23,7 @@ xftfont DejaVu Sans Mono:size=24
 disable_auto_reload yes
 double_buffer       yes
 
-own_window       yes
+own_window       no
 own_window_transparent yes
 own_window_type  desktop
 own_window_hints below,skip_pager,skip_taskbar,undecorated,sticky
