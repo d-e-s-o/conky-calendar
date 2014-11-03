@@ -20,7 +20,12 @@ draw_outline no
 use_xft yes
 xftfont DejaVu Sans Mono:size=24
 
-disable_auto_reload yes
+# Note that actually, the auto reload feature is not needed or wanted.
+# However, explicitly disabling it causes all periodically ran commands
+# to fail with 'Bad file descriptor' errors when closing certain file
+# descriptors (mostly stdout). Leave it on until this got fixed or a
+# better work around is found.
+#disable_auto_reload yes
 double_buffer       yes
 
 own_window       no
