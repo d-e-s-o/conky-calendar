@@ -1,5 +1,5 @@
 #/***************************************************************************
-# *   Copyright (C) 2014-2015 Daniel Mueller (deso@posteo.net)              *
+# *   Copyright (C) 2014-2016 Daniel Mueller (deso@posteo.net)              *
 # *                                                                         *
 # *   This program is free software: you can redistribute it and/or modify  *
 # *   it under the terms of the GNU General Public License as published by  *
@@ -49,6 +49,10 @@ gap_x 50
 gap_y -20
 
 TEXT
-${execpi 300 cal --monday $(date --date='last month' +'%m %Y')}
+# We always use the 15th of the current month for determination of the
+# previous and next month. Simple month arithemtic with 'date' is flawed
+# for certain dates. For example, the next month for 2015/08/31 is
+# reported to be October.
+${execpi 300 cal --monday $(date --date="$(date +%Y-%m-15) -1 month" +'%m %Y')}
 ${execpi 300 cal --monday | sed --regexp-extended --expression="s!( |^)($(date +%e))( |$)!\1\$\{color e84448\}\2\$\{color\}\3!"}
-${execpi 300 cal --monday $(date --date='next month' +'%m %Y')}
+${execpi 300 cal --monday $(date --date="$(date +%Y-%m-15) +1 month" +'%m %Y')}
