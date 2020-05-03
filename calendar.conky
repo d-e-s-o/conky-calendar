@@ -18,7 +18,7 @@
 default_color ffffff
 draw_outline no
 use_xft yes
-xftfont DejaVu Sans Mono:size=24
+xftfont DejaVu Sans Mono:size=44
 
 # Note that actually, the auto reload feature is not needed or wanted.
 # However, explicitly disabling it causes all periodically ran commands
@@ -42,10 +42,10 @@ out_to_stderr   no
 # position; the problem when not specifying this is that the color
 # substitution below incorrectly influences the width--although there is
 # not more text visible, the widgets gets wider
-maximum_width 400
+maximum_width 800
 
 alignment middle_right
-gap_x 50
+gap_x 150
 gap_y -20
 
 TEXT
