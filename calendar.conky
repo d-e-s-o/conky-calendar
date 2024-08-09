@@ -1,5 +1,5 @@
 #/***************************************************************************
-# *   Copyright (C) 2014-2016 Daniel Mueller (deso@posteo.net)              *
+# *   Copyright (C) 2014-2024 Daniel Mueller (deso@posteo.net)              *
 # *                                                                         *
 # *   This program is free software: you can redistribute it and/or modify  *
 # *   it under the terms of the GNU General Public License as published by  *
@@ -50,7 +50,7 @@ gap_y -20
 
 TEXT
 # We always use the 15th of the current month for determination of the
-# previous and next month. Simple month arithemtic with 'date' is flawed
+# previous and next month. Simple month arithmetic with 'date' is flawed
 # for certain dates. For example, the next month for 2015/08/31 is
 # reported to be October.
 ${execpi 300 cal --monday $(date --date="$(date +%Y-%m-15) -1 month" +'%m %Y')}
